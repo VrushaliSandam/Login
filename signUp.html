@@ -1,0 +1,56 @@
+<html>
+    <body>
+                <h3>Name</h3>
+                <input type="text" placeholder="Enter your name">
+
+                <h4>Email ID</h4>
+                <input type="text" placeholder="Enter your email id">
+            
+                <h4>password</h4>
+                <input type="text" placeholder="Enter a password">
+            
+                <h4>Confirm password</h4>
+                <input type="text" placeholder="Enter a confirm password"><br><br>
+           
+            
+        </table>
+        <input type="submit"onclick="create_account()"/>
+        <script type="text/javascript">
+            function create_account()
+            {
+                var n =document.getElementById("n1").value;
+                var e =document.getElementById("e1").value;
+                var p =document.getElementById("p1").value;
+                var cp=document.getElementById("p2").value;
+                //for password validation
+                var letters=/^[A-Za-z]+$/;
+                var email_val = /^([a-zA-Z0-9_\.\-])+\@([a-zA-Z0-9\-])+([a-zA-Z0-9])+$/;
+                if(n=="|| e=="||p=="||cp==")
+                {
+                    alert("Enter valid details");
+                }
+                else if(!letters.test(n))
+                {
+                    alert("Name must contain alphabet only");
+                }
+                else if(!email_val.test(e))
+                {
+                    alert("enter a valid id");
+                }
+                else if(p!=cp){
+                    alert("password do not match");
+                }
+                else if(document.getElementById("p1").value.length<12){
+                    alert("password max length is 12")
+                }
+                else if(document.getElementById("p1").value.length<6){
+                    alert("password min length is 6");
+                }
+                else{
+                    alert("Account Successfully Created");
+                }
+            }
+
+        </script>
+    </body>
+</html>
